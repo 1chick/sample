@@ -1,3 +1,4 @@
+# 分离中文及数字
 void part(string _str, vector<int> &_num)
 {
 	int sum = 0;
@@ -7,8 +8,8 @@ void part(string _str, vector<int> &_num)
 	while (i < _str.length())
 	{
 		if ('0' <= _str.at(i) && _str.at(i) <= '9')
-		{//还原连续的数字
-			sum = sum * 10 + (_str.at(i) - '0');
+		{
+			sum = sum * 10 + (_str.at(i) - '0'); // multi numbers
 			isNum = true;
 		}	
 		else
@@ -23,7 +24,8 @@ void part(string _str, vector<int> &_num)
 		i++;
 	}
 	
-	//判断最后一个字符是否是数字
+	//last number
 	if (isNum)
 		_num.push_back(sum);
 }
+
